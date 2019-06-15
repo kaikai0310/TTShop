@@ -48,10 +48,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201906111410143_InitialDB.cs" />
+    <Compile Include="Migrations\201906111410143_InitialDB.Designer.cs">
+      <DependentUpon>201906111410143_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906130155361_AddParentID.cs" />
+    <Compile Include="Migrations\201906130155361_AddParentID.Designer.cs">
+      <DependentUpon>201906130155361_AddParentID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906150945322_AddParentIDforProCate.cs" />
+    <Compile Include="Migrations\201906150945322_AddParentIDforProCate.Designer.cs">
+      <DependentUpon>201906150945322_AddParentIDforProCate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FooterRepository.cs" />
+    <Compile Include="Repositories\MenuGroupRepository.cs" />
+    <Compile Include="Repositories\MenuRepository.cs" />
+    <Compile Include="Repositories\OrderDetailRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\PageRepository.cs" />
+    <Compile Include="Repositories\PostCategoryRepository.cs" />
+    <Compile Include="Repositories\PostRepository.cs" />
+    <Compile Include="Repositories\PostTagRepository.cs" />
+    <Compile Include="Repositories\ProductCategoryRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\ProductTagRepository.cs" />
+    <Compile Include="Repositories\SlideRepository.cs" />
+    <Compile Include="Repositories\SupportOnlineRepository.cs" />
+    <Compile Include="Repositories\SystemConfigRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\VisitorStatisticRepository.cs" />
+    <Compile Include="TTShopDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +99,21 @@
       <Project>{1005aed2-8045-4b7c-af2a-1df474706bfb}</Project>
       <Name>TTSHOP.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TTSHOP.Model\TTSHOP.Model.csproj">
+      <Project>{78efba7c-0bef-42be-b6cd-abcdee7c2c4f}</Project>
+      <Name>TTSHOP.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906111410143_InitialDB.resx">
+      <DependentUpon>201906111410143_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130155361_AddParentID.resx">
+      <DependentUpon>201906130155361_AddParentID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906150945322_AddParentIDforProCate.resx">
+      <DependentUpon>201906150945322_AddParentIDforProCate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
